@@ -59,7 +59,7 @@ router.post("/register", async (req, res) => {
 
     res.status(200).json({ success: true, data: "Email envoyé" })
   } catch (err) {
-    res.status(400).send(err)
+    res.status(400).send("Veuillez réessayer")
   }
 })
 
@@ -89,7 +89,7 @@ router.post("/login", async (req, res) => {
 router.post("/forgotpassword", async (req, res, next) => {
   // Validate Data before we create user
   const { error } = forgotPasswordValidation(req.body)
-  if (error) return res.status(400).send(error.details[0].message)
+  if (error) return res.status(400).send("Veuillez réesayer")
 
   try {
     const user = await User.findOne({ email: req.body.email })
