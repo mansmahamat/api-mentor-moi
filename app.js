@@ -18,7 +18,7 @@ mongoose.connect(
     useCreateIndex: true,
     autoIndex: true,
   },
-  () => console.log("DB connected ")
+  () => console.log("DB connected !")
 )
 
 // Middleware
